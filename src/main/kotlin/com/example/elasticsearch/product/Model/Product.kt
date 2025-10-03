@@ -1,4 +1,4 @@
-package com.example.elasticsearch.product
+package com.example.elasticsearch.product.Model
 
 import jakarta.persistence.Entity
 import jakarta.persistence.GeneratedValue
@@ -13,5 +13,5 @@ class Product {
     val id: Long = 0
 
     var name: String = ""
-    
+
 }
