@@ -1,0 +1,21 @@
+services:
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:8.15.0
+    container_name: elasticsearch
+    environment:
+      - discovery.type=single-node
+      - xpack.security.enabled=true
+      - ELASTIC_PASSWORD=1234               # elastic 계정 비밀번호 설정
+      - xpack.security.http.ssl.enabled=false  # HTTPS 비활성화 (로컬 개발용)
+    ports:
+      - "9200:9200"
+    networks:
+      - elasticnet
+    volumes:
+      - es-data:/usr/share/elasticsearch/data
+
+networks:
+  elasticnet:
+
+volumes:
+  es-data:
