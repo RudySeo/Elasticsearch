@@ -10,6 +10,6 @@ class ProductDocument(
     @Id
     val id: Long,
 
-    @Field(type = FieldType.Text, analyzer = "korean_analyzer", searchAnalyzer = "korean_analyzer")
+    @Field(type = FieldType.Text, analyzer = "autocomplete", searchAnalyzer = "standard")
     val name: String
 )
